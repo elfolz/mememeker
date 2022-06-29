@@ -19,12 +19,15 @@ function pasteImg() {
 
 function copyImg() {
 	if (!img.src || img.src == location.href) return alert('Cole ou envie uma imagem para criar seu meme.')
-	createMeme('base64')
+	createMeme('blob')
 	.then(response => {
 		return navigator.clipboard.write([new ClipboardItem({'image/png': response})])
 		.then(() => {
 			alert('Meme copiado 😁')
 		})
+	})
+	.catch(error => {
+		alert(error)
 	})
 }
 
