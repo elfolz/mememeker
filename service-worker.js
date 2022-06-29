@@ -1,16 +1,18 @@
 const assets = [
 	'/',
-	'script.js',
-	'style.css',
-	'favicon.ico',
-	'image/copy.svg',
-	'image/image.svg',
-	'image/download.svg',
-	'image/clipboard.svg',
-	'android-chrome-192x192.png',
-	'android-chrome-512x512.png',
-	'android-chrome-maskable-192x192.png',
-	'android-chrome-maskable-512x512.png'
+	'/mememeker/',
+	'/mememeker/index.html',
+	'/mememeker/script.js',
+	'/mememeker/style.css',
+	'/mememeker/favicon.ico',
+	'/mememeker/image/copy.svg',
+	'/mememeker/image/image.svg',
+	'/mememeker/image/download.svg',
+	'/mememeker/image/clipboard.svg',
+	'/mememeker/android-chrome-192x192.png',
+	'/mememeker/android-chrome-512x512.png',
+	'/mememeker/android-chrome-maskable-192x192.png',
+	'/mememeker/android-chrome-maskable-512x512.png'
 ]
 
 self.addEventListener('install', event => {
