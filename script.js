@@ -1,7 +1,7 @@
 const canvas = document.querySelector('canvas')
 const context = canvas.getContext('2d')
 const reader = new FileReader()
-const img = document.getElementsByTagName('img')[0]
+const img = document.querySelector('#meme')
 const buttonPaste = document.querySelector('#button-paste')
 const buttonCopy = document.querySelector('#button-copy')
 const buttonDownload = document.querySelector('#button-download')
