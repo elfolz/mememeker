@@ -1,0 +1,107 @@
+:root {
+	--color-primary: #1f75fe;
+	--color-accent: #00fa9a;
+}
+* {
+	font-family: Play, sans-serif;
+	box-sizing: border-box;
+}
+body {
+	background-color: #121212;
+}
+main {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+figure {
+	position: relative;
+	width: var(--vw);
+	height: var(--vw);
+	margin: 0;
+	border: 2px solid whitesmoke;
+	border-radius: 8px;
+	overflow: hidden;
+}
+figure > img {
+	width: 100%;
+	height: 100%;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+}
+figure img[src=""] {
+	display: none;
+}
+figure input {
+	position: absolute;
+	left: 12px;
+	right: 12px;
+	height: 56px;
+	font-size: 48px;
+	background: none;
+	outline: 2px solid var(--color-accent);
+	border: none;
+	border-radius: 8px;
+	color: #fff;
+	text-align: center;
+	text-shadow: -2px -2px 2px #000, -2px 2px 2px #000, 2px 2px 2px #000, -2px 2px 2px #000;
+}
+figure input:first-of-type {
+	top: 12px;
+}
+figure input:last-of-type {
+	bottom: 12px;
+}
+button, label {
+	display: inline-block;
+	width: 92px;
+	height: 76px;
+	padding: 6px;
+	border-radius: 8px;
+	border: none;
+	background: var(--color-primary);
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: opacity 250ms ease-in-out;
+	font-size: .8em;
+	text-align: center;
+	color: #fff;
+}
+button > img, label > img {
+	display: block;
+	margin: 0 auto;
+	width: 48px;
+	height: 48px;
+}
+button > span, label > span {
+	color: inherit;
+}
+input[type="file"] {
+	display: none;
+}
+footer {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 12px;
+}
+footer div:last-of-type button {
+	color: #333;
+	background: var(--color-accent);
+}
+canvas {
+	display: none;
+}
+@media screen and (min-width: 480px) {
+	footer div:first-of-type button:first-of-type {
+		margin-right: 6px;
+	}
+	footer div:last-of-type button:last-of-type {
+		margin-left: 6px;
+	}
+}
+@media screen and (max-width: 413px) {
+	footer div button, footer div label {
+		zoom: 0.85;
+	}
+}
