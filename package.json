@@ -2,7 +2,7 @@
 	"name": "ar",
 	"version": "1.0.0",
 	"scripts": {
-		"serve": "http-server ./ -p 8080 --ssl --cert cert.crt --key cert.key -c-1"
+		"serve": "http-server ./ -p 8080 -c-1"
 	},
 	"devDependencies": {
 		"http-server": "^14.1.1"
