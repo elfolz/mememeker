@@ -15,6 +15,9 @@ function pasteImg() {
 			})
 		})
 	})
+	.catch(error => {
+		alert('Falha ao colar a imagem ☹️ mas você pode fazer o upload dela 😉')
+	})
 }
 
 function copyImg() {
@@ -22,12 +25,12 @@ function copyImg() {
 	createMeme('blob')
 	.then(response => {
 		return navigator.clipboard.write([new ClipboardItem({'image/png': response})])
-		.then(() => {
-			alert('Meme copiado 😁')
-		})
+	})
+	.then(() => {
+		alert('Meme copiado 😁')
 	})
 	.catch(error => {
-		alert(error)
+		alert('Falha ao copiar o meme ☹️ mas você pode fazer o download 😉')
 	})
 }
 
