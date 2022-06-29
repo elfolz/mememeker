@@ -15,6 +15,15 @@ main {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+main > img {
+	position: absolute;
+	width: 120px;
+	top: -144px;
+	left: 50%;
+	transform: translateX(-50%);
+	aspect-ratio: 1/1;
+	animation: dance 3s linear infinite;
+}
 figure {
 	position: relative;
 	width: var(--vw);
@@ -91,6 +100,20 @@ footer div:last-of-type button {
 }
 canvas {
 	display: none;
+}
+@keyframes dance {
+	0% {
+		transform: translateX(-50%) rotate(0deg);
+	}
+	25% {
+		transform: translateX(-50%) rotate(-15deg);
+	}
+	75% {
+		transform: translateX(-50%) rotate(15deg);
+	}
+	100% {
+		transform: translateX(-50%) rotate(0deg);
+	}
 }
 @media screen and (min-width: 480px) {
 	footer div:first-of-type button:first-of-type {
