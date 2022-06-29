@@ -49,8 +49,8 @@ function createMeme(type='base64') {
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 ${imgSize} ${imgSize}">
 	<image width="${imgSize}" height="${imgSize}" preserveAspectRatio="xMidYMid slice" xlink:href="${img.src}">
 </image>
-<text x="50%" y="36px" style="fill: #fff; stroke: #000; stroke-width: 2; dominant-baseline:central; text-anchor:middle; font-size:48px;">${header}</text>
-<text x="50%" y="${imgSize-48}px" style="fill: #fff; stroke: #000; stroke-width: 2; dominant-baseline:central; text-anchor:middle; font-size:48px;">${footer}</text>
+<text font-family="sans-serif" x="50%" y="36px" style="fill: #fff; stroke: #000; stroke-width: 2; dominant-baseline:central; text-anchor:middle; font-size:48px; font-weight: bold;">${header}</text>
+<text font-family="sans-serif" x="50%" y="${imgSize-48}px" style="fill: #fff; stroke: #000; stroke-width: 2; dominant-baseline:central; text-anchor:middle; font-size:48px; font-weight: bold;">${footer}</text>
 </svg>`
 	let meme = new Image()
 	meme.width = imgSize
