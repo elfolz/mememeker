@@ -9,7 +9,7 @@ function pasteImg() {
 	.then(response => {
 		response.forEach(el => {
 			if (!el.types.includes('image/png')) return alert('Não há nenhuma imagem copiada para colar ☹️')
-			el.getType('image/png')
+			return el.getType('image/png')
 			.then(blob => {
 				reader.readAsDataURL(blob)
 			})
@@ -18,10 +18,10 @@ function pasteImg() {
 }
 
 function copyImg() {
-	if (!img || img.src == location.href) return alert('Cole ou envie uma imagem para criar seu meme.')
-	createMeme('blob')
+	if (!img.src || img.src == location.href) return alert('Cole ou envie uma imagem para criar seu meme.')
+	createMeme('base64')
 	.then(response => {
-		navigator.clipboard.write([new ClipboardItem({'image/png': response})])
+		return navigator.clipboard.write([new ClipboardItem({'image/png': response})])
 		.then(() => {
 			alert('Meme copiado 😁')
 		})
@@ -29,7 +29,7 @@ function copyImg() {
 }
 
 function downloadImg() {
-	if (!img || img.src == location.href) return alert('Cole ou envie uma imagem para criar seu meme.')
+	if (!img.src || img.src == location.href) return alert('Cole ou envie uma imagem para criar seu meme.')
 	createMeme('base64')
 	.then(response => {
 		let link = document.createElement('a')
