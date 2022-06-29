@@ -2,9 +2,6 @@ const canvas = document.querySelector('canvas')
 const context = canvas.getContext('2d')
 const reader = new FileReader()
 const img = document.querySelector('#meme')
-const buttonPaste = document.querySelector('#button-paste')
-const buttonCopy = document.querySelector('#button-copy')
-const buttonDownload = document.querySelector('#button-download')
 var imgSize = 512
 
 function pasteImg() {
@@ -82,17 +79,14 @@ function refreshSize() {
 	document.documentElement.style.setProperty('--vw', `${imgSize}px`)
 }
 
-reader.onload = e => { img.src = e.target.result }
-
+document.querySelector('#button-paste').onclick = () => pasteImg()
+document.querySelector('#button-copy').onclick = () => copyImg()
+document.querySelector('#button-download').onclick = () => downloadImg()
 document.querySelector('input[type=file]').onchange = e => {
 	let picture = e.target.files[0]
 	if (picture) reader.readAsDataURL(picture)
 }
 
-buttonPaste.onclick = () => pasteImg()
-buttonCopy.onclick = () => copyImg()
-buttonDownload.onclick = () => downloadImg()
-
+reader.onload = e => { img.src = e.target.result }
 window.onload = () => refreshSize()
-
 window.onresize = () => refreshSize()
