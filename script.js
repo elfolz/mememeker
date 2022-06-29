@@ -22,10 +22,7 @@ function pasteImg() {
 
 function copyImg() {
 	if (!img.src || img.src == location.href) return alert('Cole ou envie uma imagem para criar seu meme.')
-	createMeme('blob')
-	.then(response => {
-		return navigator.clipboard.write([new ClipboardItem({'image/png': response})])
-	})
+	navigator.clipboard.write([new ClipboardItem({'image/png': createMeme('blob')})])
 	.then(() => {
 		alert('Meme copiado 😁')
 	})
@@ -61,7 +58,7 @@ function createMeme(type='base64') {
 	let meme = new Image()
 	meme.width = imgSize
 	meme.height = imgSize
-	let blob = new Blob([svg], {type: "image/svg+xml;charset=utf-8"})
+	let blob = new Blob([svg], {type: 'image/svg+xml;charset=utf-8'})
 	let url = URL.createObjectURL(blob)
 	meme.src = url
 	return new Promise(resolve => {
