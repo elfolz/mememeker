@@ -1,4 +1,4 @@
-navigator.serviceWorker.register('service-worker.js')
+navigator.serviceWorker?.register('service-worker.js')
 
 const canvas = document.querySelector('canvas')
 const context = canvas.getContext('2d')
@@ -51,11 +51,10 @@ function createMeme(type='base64') {
 	let header = texts[0].value
 	let footer = texts[1].value
 	let svg = `<?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 ${imgSize} ${imgSize}">
-	<image width="${imgSize}" height="${imgSize}" preserveAspectRatio="xMidYMid slice" xlink:href="${img.src}">
-</image>
-<text font-family="sans-serif" x="50%" y="36px" style="fill: #fff; stroke: #000; stroke-width: 2; dominant-baseline:central; text-anchor:middle; font-size:48px; font-weight: bold;">${header}</text>
-<text font-family="sans-serif" x="50%" y="${imgSize-48}px" style="fill: #fff; stroke: #000; stroke-width: 2; dominant-baseline:central; text-anchor:middle; font-size:48px; font-weight: bold;">${footer}</text>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" font-family="Play, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" dominant-baseline="central" viewBox="0 0 ${imgSize} ${imgSize}">
+	<image width="${imgSize}" height="${imgSize}" preserveAspectRatio="xMidYMid slice" xlink:href="${img.src}"></image>
+	<text x="50%" y="36px" fill="#fff" stroke="#000" stroke-width="2">${header}</text>
+	<text x="50%" y="${imgSize-48}px" fill="#fff" stroke="#000" stroke-width="2">${footer}</text>
 </svg>`
 	let meme = new Image()
 	meme.width = imgSize
