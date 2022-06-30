@@ -125,7 +125,7 @@ canvas {
 		margin-left: 6px;
 	}
 }
-@media screen and (max-width: 413px) {
+@media screen and (max-width: 413px), screen and (max-height: 760px) {
 	footer div button, footer div label {
 		zoom: 0.85;
 	}
