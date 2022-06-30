@@ -80,6 +80,7 @@ function createMeme(type='base64') {
 
 function refreshSize() {
 	imgSize = window.innerWidth > 512 ? 512 : (window.innerWidth - 24)
+	imgSize = window.innerHeight > 760 ? imgSize : (window.innerHeight - 280)
 	document.documentElement.style.setProperty('--vw', `${imgSize}px`)
 }
 
